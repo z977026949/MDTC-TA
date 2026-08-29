@@ -1,0 +1,19 @@
+# 忽略不需要的文件夹和缓存
+venv/
+.idea/
+__pycache__/
+results/
+data/processed/
+
+# 忽略除 raw_SP500.csv 之外的其他原始数据
+data/raw/raw_N225.csv
+data/raw/raw_NASDAQ-100.csv
+
+# 忽略不需要上传的根目录 py 脚本
+check_model_consistency.py
+check_npy.py
+draw_all.py
+draw_compare.py
+generate_final_figures.py
+save_attention.py
+save_feature.py

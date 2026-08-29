@@ -1,0 +1,25 @@
+# ==========================================
+# 项目名称: MDTC-TA 股票价格预测实验配置
+# ==========================================
+
+# 1. 数据与路径配置
+data:
+  raw_data_path: "data/raw/raw_SP500.csv"
+  window_size: 30          # 历史滑动窗口大小（交易日）
+  batch_size: 32           # 批大小
+  input_dim: 4            # 输入平稳特征维度
+
+# 2. 模型通用超参数配置
+training:
+  epochs: 100              # 最大训练轮数
+  patience: 20             # Early Stopping 耐心值
+  learning_rate: 0.0001    # 初始学习率 (AdamW)
+  weight_decay: 0.0001     # 权重衰减系数
+  dropout: 0.1             # Dropout 丢弃率
+  dir_weight: 1.0         # 组合损失函数中方向惩罚项的权重
+
+# 3. 实验运行开关（控制一键复现脚本）
+experiments:
+  run_baselines: true      # 是否运行经典基线模型 (LSTM, BiLSTM, CNN, TCN, Transformer)
+  run_main_model: true     # 是否运行我们提出的完整模型 (MDTC-TA)
+  run_ablations: true      # 是否运行消融实验组 (Single TCN, Multi-Scale only, Full Model)
